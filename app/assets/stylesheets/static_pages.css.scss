@@ -21,7 +21,7 @@ a{
 	.content-wrapper{
 		.game-wrapper{
 			border: 2px solid #777;
-		  opacity: 0.25;
+		  opacity: 0.5;
 		  -webkit-transition: opacity .25s ease-in-out;
 		  	 -moz-transition: opacity .25s ease-in-out;
 		          transition: opacity .25s ease-in-out;
@@ -35,6 +35,22 @@ a{
 
 .row {
 	margin-top: 15px;
+}
+
+.navbar-inverse {
+  .navbar-brand {
+	font-weight: bold;
+	font-size: 2em;
+	-webkit-transition: color .2s ease-in;
+	   -moz-transition: color .2s ease-in;
+       -o-transition: color .2s ease-in;
+  transition: color .2s ease-in;
+  color: #fff;
+
+	&:hover {
+	  color: rgb(173,216,230);
+	  }
+  }
 }
 
 // RPS
