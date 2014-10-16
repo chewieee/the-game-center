@@ -1,4 +1,13 @@
 Rails.application.routes.draw do
+  root "static_pages#home"
+
+  get 'rockpaperscissors' => 'rps#new'
+  get 'rockpaperscissors/reset' => 'rps#new'
+  post 'rockpaperscissors/make_move' => 'rps#make_move'
+
+  get 'connectfour' => 'connect_four#new'
+  get 'connectfour/new' => 'connect_four#new'
+  post 'connectfour/drop_piece' => 'connect_four#drop_piece'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

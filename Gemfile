@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
-
+# Twitter Bootstrap gem
+gem 'twitter-bootstrap-rails', :git => 'https://github.com/seyhunak/twitter-bootstrap-rails', :branch => 'master'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.4'
 # Use sqlite3 as the database for Active Record
@@ -25,6 +26,11 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 
 # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
 gem 'spring',        group: :development
+
+group :development do
+  gem "better_errors"
+end
+gem 'binding_of_caller'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

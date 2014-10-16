@@ -1,0 +1,50 @@
+<%= render 'shared/navbar' %>
+
+
+<main class="gc-page-wrapper jumbotron">
+	<section class="content-wrapper container">
+		<div class="top-header">
+			<h1>Welcome to Game Center!</h1>
+			<p>Choose one of the games below to start playing.</p>
+		</div>
+
+		<div class="row">
+			<div class="col-xs-6">
+				<%= link_to(rockpaperscissors_path) do %>
+					<div class="game-wrapper">
+						<h3>Rock, Paper, Scissors</h3>
+						<p>An ancient game of skill and strat, yo.</p>
+					</div>
+				<% end %>
+			</div>
+			<%= link_to(connectfour_path) do %>
+				<div class="col-xs-6">
+					<div class="game-wrapper">
+						<h3>C-Four</h3>
+						<p>Connect four with pizaz. Or Pizzas. You decide!</p>
+					</div>
+				</div>
+			<%end%>
+		</div>
+
+		<div class="row">
+			<div class="col-xs-6">
+				<%= link_to("#") do %>
+					<div class="game-wrapper">
+						<h3>Tic Tac Toe</h3>
+						<p>Other toes are just plain tacky.</p>
+					</div>
+				<% end %>
+			</div>
+			<%= link_to("#") do %>
+				<div class="col-xs-6">
+					<div class="game-wrapper">
+						<h3>Mastermind</h3>
+						<p>Coming soon to a mind near you...</p>
+					</div>
+				</div>
+			<%end%>
+		</div>
+	</section>
+	
+</main>
