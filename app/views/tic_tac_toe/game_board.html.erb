@@ -1,20 +1,23 @@
 <%= render :partial => "shared/navbar" %>
-<h1>Welcome to TicTacToe!</h1>
 
-<%= render :partial => "ttt_header",
-           :locals  => { :current_player => @current_player,
-                         :game_over      => @game_over } %>
+<div class="gc-page-wrapper">
+	<h1>Welcome to TicTacToe!</h1>
 
-<%= render :partial => "ttt_board",
-           :locals  => { :board_arr => @board_arr } %>
+	<%= render :partial => "ttt_header",
+	           :locals  => { :current_player => @current_player,
+	                         :game_over      => @game_over } %>
 
-<% if @game_over %>
-  
-  <%= link_to "Play Again!", tictactoe_path %>
+	<%= render :partial => "ttt_board",
+	           :locals  => { :board_arr => @board_arr } %>
 
-<% else %>
+	<% if @game_over %>
+	  
+	  <%= link_to "Play Again!", tictactoe_path %>
 
-  <%= render :partial => "ttt_form",
-             :locals  => { :board_arr => @board_arr } %>
+	<% else %>
 
-<% end %>
+	  <%= render :partial => "ttt_form",
+	             :locals  => { :board_arr => @board_arr } %>
+
+	<% end %>
+</div>

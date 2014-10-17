@@ -1,15 +1,14 @@
 <!-- Renders the Tic Tac Toe Board -->
 
-<pre>
- <table>
-   <% @board_arr.each do |row| %>
+
+ <table class="ttt-table">
+   <% board_arr.each do |row| %>
      <tr>
        <% row.each do |cell| %>
-         <td>
+         <td class="ttt-piece">
          	<%= cell.nil? ? '-' : cell %>
          </td>
        <% end %>
      </tr>
    <% end %>
  </table>
-</pre>

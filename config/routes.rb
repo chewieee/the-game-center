@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
   root "static_pages#home"
 
-  get  'rockpaperscissors' => 'rps#new'
-  get  'rockpaperscissors/reset' => 'rps#new'
-  post 'rockpaperscissors/make_move' => 'rps#make_move'
+  get  '/rps'   => 'rps#new'
+  get  '/reset' => 'rps#new'
+  post '/throw' => 'rps#throw'
 
   get  'connectfour' => 'connect_four#new'
   get  'connectfour/new' => 'connect_four#new'

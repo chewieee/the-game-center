@@ -1,17 +1,17 @@
 <!-- Renders the Tic Tac Toe move form -->
 
-<%= form_tag(make_move_path, :method => "POST") do %>
-   <table>
+<%= form_tag(make_move_path, :method => "POST", :style => "align-content: center;") do %>
+   <table class="ttt-radio-table">
      <% 3.times do |row| %>
        <tr>
          <% 3.times do |cell| %>
            <td>
-             <% disabled = @board_arr[row][cell] %>
-             <%= radio_button_tag("move", "#{row},#{cell}", !disabled, :disabled => disabled) %>
+             <% disabled = board_arr[row][cell] %>
+             <%= radio_button_tag("move", "#{row},#{cell}", !disabled, :disabled => disabled, :style => "margin: 10px")%>
            </td>
          <% end %>
        </tr>
      <% end %>
    </table>
-   <%= submit_tag "Make Move" %>
+   <%= submit_tag "Make Move", :class => "btn btn-sm btn-default make-move-btn" %>
  <% end %>

@@ -56,7 +56,7 @@ class TicTacToeController < ApplicationController
   	if @board.winning_combination?(@current_player)
   		@game_over = "Game over, player #{@current_player} wins!"
   	elsif @board.full?
-  		@game_over = "Game Over! You've drawn."
+  		@game_over = "Game over! You've drawn."
   	end
   end
 end

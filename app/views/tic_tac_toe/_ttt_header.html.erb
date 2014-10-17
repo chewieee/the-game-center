@@ -1,15 +1,15 @@
 <!-- Renders the Tic Tac Toe Header -->
 
-<% if @game_over %>
+<% if game_over %>
   <h2>
-    <%= @game_over %>
+    <%= game_over %>
   </h2>
 <% else %>
   <h2>
-    It is player <%= @current_player %>'s turn!
+    Player <%= @current_player %>, you're up!
   </h2>
 
   <p>
-    Enter your selection using the form below.
+    Enter your selection using the buttons below.
   </p>
  <% end %>
