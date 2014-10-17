@@ -46,11 +46,11 @@ class RpsController < ApplicationController
 	def evaluate_winner(player_throw, computer_throw)
   	case [player_throw, computer_throw]
 
-  	when %w{ p rock }, %w{ s paper }, %w{ r scissors }
+  	when %w{ paper rock }, %w{ scissors paper }, %w{ rock scissors }
   		@score[0] += 1
 			@result = "PLAYER WINS"
 
-		when %w{ r paper }, %w{ p scissors }, %w{ s rock }
+		when %w{ rock paper }, %w{ paper scissors }, %w{ scissors rock }
 			@score[1] += 1
 			@result = "COMP WINS"
 			
