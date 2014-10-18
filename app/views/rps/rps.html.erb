@@ -1,59 +1,51 @@
-<%= render 'shared/navbar' %>
+
 
 <div class="gc-page-wrapper">
-<h1>Welcome to Rock, Paper, Scissors!</h1>
+  <h1>Welcome to Rock, Paper, Scissors!</h1>
 
-<main>
-	<secion class="rps-game-wrapper container">
-		<div class="rps-content col-md-6">
-			<header class="header">
-				<h2>Rock, Paper, Scissors</h2>
-				<p>Choose your weapon below.</p>
+  <h2>Choose your weapon below.</h2>
 
-			</header>
-			<!-- needs to have a case for the start of the game. Otherwise these values are nil. -->
-			<div class="col-md-8 col-md-offset-3">
-				<div class="game-box">
-					<h3><% if @computer_throw %>
-							<%= "The computer chose #{@computer_throw}." %>
-							<% end %>
-					</h3>
-					<h3><% if @player_throw %>
-							<%= "You chose #{@player_throw}." %>
-							<% else %>
-							<%= "What's it gonna be?" %>
-							<% end %>
-					</h3>
-					<h3><%= "#{@result}" %></h3>
-				</div>
-				<div class="game-box">
-					<div class="row">
+  <p>Click <%= link_to "HERE", rps_path %> to reset the score.</p>
+
+
+	
+	
+			
+				<div class="col-md-6 col-md-offset-3">
+
+				  <div class="game-box">
 						<h4>Score</h4>
-						<h5><%= "Player: #{@score[0]} | Computer: #{@score[1]}" %></h5>
+						<h5><%= "Player: #{@score[0]}  |  Computer: #{@score[1]}" %></h5>
+					</div>
+					
+					<div class="game-box">
+						<h3><% if @computer_throw %>
+								<%= "The computer chose #{@computer_throw}." %>
+								<% end %>
+						</h3>
+						<h3><% if @player_throw %>
+								<%= "You chose #{@player_throw}." %>
+								<% else %>
+								<%= "What's it gonna be?" %>
+								<% end %>
+						</h3>
+						<h3><%= "#{@result}" %></h3>
+					</div>
+
+					<div class="game-box">
+						<%= form_tag(throw_path, :method => "POST") do %>
+							<%= radio_button_tag(:player_choice, "rock") %>
+							<%= label_tag(:rock, "Rock") %>
+
+							<%= radio_button_tag(:player_choice, "paper") %>
+							<%= label_tag(:paper, "Paper") %>
+
+							<%= radio_button_tag(:player_choice, "scissors") %>
+							<%= label_tag(:scissors, "Scissors") %>
+							<%= submit_tag("Ro Sham Bo!") %>
+						<% end %>
+
 					</div>
 				</div>
-
-				<div class="game-box">
-					<%= form_tag(throw_path, :method => "POST") do %>
-						<%= radio_button_tag(:player_choice, "rock") %>
-						<%= label_tag(:rock, "Rock") %>
-
-						<%= radio_button_tag(:player_choice, "paper") %>
-						<%= label_tag(:paper, "Paper") %>
-
-						<%= radio_button_tag(:player_choice, "scissors") %>
-						<%= label_tag(:scissors, "Scissors") %>
-						<%= submit_tag("Ro Sham Bo!") %>
-					<% end %>
-
-				</div>
-				<%= link_to "Reset score?", rps_path %>
-			</div>
-		
-		</div>
-		
-	</secion>
-</main>
-
-
 </div>
+	

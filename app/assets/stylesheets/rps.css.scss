@@ -1,3 +1,17 @@
 // Place all the styles related to the RPS controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+// RPS
+
+.rps-content{
+	text-align:center;
+}
+
+.game-box{
+	border: 2px solid #777;
+	border-radius: 3px;
+	margin: 15px auto;
+}
+
