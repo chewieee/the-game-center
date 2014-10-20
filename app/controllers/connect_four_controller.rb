@@ -13,6 +13,8 @@ class ConnectFourController < ApplicationController
     @current_player = retrieve_current_player
     @grid = Grid.new(retrieve_grid_arr)
     @grid.add_piece(retrieve_move, @current_player)
+
+    @game_over = game_over_message
     
     @grid_arr = @grid.grid_arr
     switch_player
@@ -48,4 +50,11 @@ class ConnectFourController < ApplicationController
   	params[:move].to_i
   end
 
+  def game_over_message
+  	if @grid.winning_combination?(@current_player)
+  		@game_over = "Game over, player #{@current_player} wins!"
+  	elsif @grid.full?
+  		@game_over = "Game over! You've drawn."
+  	end
+  end
 end

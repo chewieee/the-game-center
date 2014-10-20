@@ -1,47 +1,20 @@
 
 <h1>Welcome to Connect Four!</h1>
-<h2>It is player <%= @current_player %>'s turn!</h2>
 
-<p>
-  Enter your column selection using the form below
-</p>
+<% if @game_over %>
+  <h2><%= @game_over %></h2>
+<% else %>
+  <h2>It is player <%= @current_player %>'s turn!</h2>
 
-
-<!-- <pre>
-  <table>
-    <% @grid_arr.each do |row| %>
-      <tr>
-        <% row.each do |cell| %>
-          <td>
-          	<%= cell.nil? ? '-' : cell %>
-          </td>
-        <% end %>
-      </tr>
-    <% end %>
-  </table>
-</pre>
-
-<%= form_tag(drop_piece_path, :method => "POST") do %>
-  <table>
-    <% 1.times do %>
-    	<tr>
-    	  <% 7.times do |col| %>
-    	    <td>
-    	      <%= radio_button_tag("drop", "#{col}") %>
-    	    </td>
-    	  <% end %>
-    	</tr>
-    <% end %>
-  </table>
-  <%= submit_tag "Drop Piece" %>
+<p>Enter your column selection using the form below</p>
 <% end %>
- -->
+
 
  <% 5.downto(0) do |row| %>
 		   <div class="row">
 			   	<div class="col-xs-offset-3">
 				     <% 0.upto(6) do |column| %>
-					     <span class="col-xs-1 c4-cell">
+					     <span class="col-xs-1">
 					     	<% if @grid_arr[column][row].nil? %> 
 					     		<%= image_tag("cfwhite.jpeg")%>
 					     	<% elsif @grid_arr[column][row] == 'R' %>
@@ -55,7 +28,7 @@
 		   </div>
 		  <% end %>
 		
-			<div class="row">
+			
 				<div class="col-xs-offset-3 ">
 					<%= form_tag(drop_piece_path, :method => "POST") do |f| %> 
 						<span class="radio col-xs-1">
@@ -91,10 +64,8 @@
 								<%= submit_tag("Submit", class: 'btn btn-large btn-success')%>
 							</div>
 						</div>
-
-
 					<% end %>
 				</div>
-			</div>
+			
 		
 	
