@@ -1,6 +1,6 @@
 class ConnectFourController < ApplicationController
 	def new
-		@current_player = 'R'
+		@current_player = 'red'
 		@grid_arr = Grid.blank_grid
 		
 		save_player
@@ -27,7 +27,7 @@ class ConnectFourController < ApplicationController
   private
 
   def switch_player
-  	@current_player = (@current_player == 'R' ? 'Y' : 'R')
+  	@current_player = (@current_player == 'red' ? 'yellow' : 'red')
   end
 
   def retrieve_current_player
@@ -52,7 +52,7 @@ class ConnectFourController < ApplicationController
 
   def game_over_message
   	if @grid.winning_combination?(@current_player)
-  		@game_over = "Game over, player #{@current_player} wins!"
+  		@game_over = "Game over, #{@current_player} wins!"
   	elsif @grid.full?
   		@game_over = "Game over! You've drawn."
   	end

@@ -1,19 +1,20 @@
 <!-- renders the connect four board -->
-
-<% 5.downto(0) do |row| %>
-  <div class="row">
-   	 <div class="col-xs-offset-3">
-	      <% 0.upto(6) do |column| %>
-		      <span class="col-xs-1">
-		     	<% if @grid_arr[column][row].nil? %> 
-		     		<%= image_tag("cfwhite.jpeg")%>
-		     	<% elsif @grid_arr[column][row] == 'R' %>
-		     		<%= image_tag("cfred.jpeg")%>
-		     	<% elsif @grid_arr[column][row] == 'Y' %><%# black piece %>
-		     		<%= image_tag("cfyell.jpeg")%>
-		     	<% end %>
-		      </span>
-	      <% end %>
-      </div>
+<div class ="c4-board">
+  <div class="c4-wrapper">
+		<% 5.downto(0) do |row| %>
+		  <div> 	 
+			  <% 0.upto(6) do |column| %>
+			    <span>
+			   	<% if @grid_arr[column][row].nil? %> 
+			   	  <%= image_tag("cfempty.png")%>
+			   	<% elsif @grid_arr[column][row] == 'red' %>
+			   		<%= image_tag("cfred.jpeg")%>
+			   	<% elsif @grid_arr[column][row] == 'yellow' %><%# black piece %>
+			   		<%= image_tag("cfyell.jpeg")%>
+			   	<% end %>
+			    </span>
+			  <% end %>
+		  </div>
+		<% end %>
   </div>
-<% end %>
+</div>

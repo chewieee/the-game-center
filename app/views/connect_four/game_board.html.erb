@@ -1,26 +1,26 @@
 
-<h1>Welcome to Connect Four!</h1>
+<div class="gc-page-wrapper">
+	<h1>Welcome to Connect Four!</h1>
 
-<%= render :partial => "c4_header",
-           :locals  => { :current_player => @current_player,
-                         :game_over => @game_over } %>
-
-
-<%= render :partial => "c4_board",
-           :locals  => { :grid_arr => @grid_arr } %>
+	<%= render :partial => "c4_header",
+	           :locals  => { :current_player => @current_player,
+	                         :game_over => @game_over } %>
 
 
-<% if @game_over %>
+	<%= render :partial => "c4_board",
+	           :locals  => { :grid_arr => @grid_arr } %>
 
-  <%= link_to "Play Again!", connectfour_path %>
 
-<% else %>
+	<% if @game_over %>
 
-  <%= render :partial => "c4_form",
-             :locals  => { :grid_arr => @grid_arr } %>
+	  <%= link_to "Play Again!", connectfour_path %>
 
-<% end %>
+	<% else %>
 
+	  <%= render :partial => "c4_form" %>
+
+	<% end %>
+</div>
 			
 		
 	

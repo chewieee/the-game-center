@@ -1,39 +1,14 @@
 <!-- renders the connect four move entry radio buttons -->
 
-<div class="col-xs-offset-3 ">
+<div class="c4-form">
 	<%= form_tag(drop_piece_path, :method => "POST") do |f| %> 
-		<span class="radio col-xs-1">
-		  <%= radio_button_tag(:move, '0') %>
-		</span>
-		
-		<span class="radio col-xs-1">
-		  <%= radio_button_tag(:move, '1') %>
-		</span>
-		
-		<span class="radio col-xs-1">
-		  <%= radio_button_tag(:move, '2') %>
-		</span>
-		
-		<span class="radio col-xs-1">
-		  <%= radio_button_tag(:move, '3') %>
-		</span>
-		
-		<span class="radio col-xs-1">
-		  <%= radio_button_tag(:move, '4') %>
-		</span>
-		
-		<span class="radio col-xs-1">
-		  <%= radio_button_tag(:move, '5') %>
-		</span>
-		
-		<span class="radio col-xs-1">
-		  <%= radio_button_tag(:move, '6') %>
-		</span>
+		<% 0.upto(6) do |i| %>
+		  <span class="c4-radio">
+		    <%= radio_button_tag(:move, "#{i}") %>
+		  </span>
+		<% end %>
 
-		<div class="row">
-			<div class="col-xs-2 col-xs-offset-3">
-				<%= submit_tag("Submit", class: 'btn btn-default')%>
-			</div>
-		</div>
+		<p><%= submit_tag("Drop", class: 'btn btn-default c4-btn')%></p>
+		
 	<% end %>
 </div>
