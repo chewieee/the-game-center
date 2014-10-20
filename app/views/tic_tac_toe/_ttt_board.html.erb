@@ -7,7 +7,7 @@
         <% 0.upto(2) do |col| %>
           <span>
           <% if @board_arr[row][col].nil? %>
-            <%= image_tag("cfempty.png", :class => "ttt-image") %>
+            <%= image_tag("tttempty.jpeg", :class => "ttt-image") %>
           <% elsif @board_arr[row][col] == 'X' %>
             <%= image_tag("x3.jpeg", :class => "ttt-image") %>
           <% elsif @board_arr[row][col] == 'O' %>
