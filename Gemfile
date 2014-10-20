@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+# Specifies Ruby version to 2.0.0
+ruby '2.0.0'
 # Twitter Bootstrap gem
 gem 'twitter-bootstrap-rails', :git => 'https://github.com/seyhunak/twitter-bootstrap-rails', :branch => 'master'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
@@ -14,6 +16,9 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.0.0'
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer',  platforms: :ruby
+
+# Used for enabling all platform features on Heroku
+gem 'rails_12factor'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
