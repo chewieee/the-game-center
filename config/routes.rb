@@ -6,8 +6,7 @@ Rails.application.routes.draw do
   post '/throw' => 'rps#throw'
 
   get  'connectfour' => 'connect_four#new'
-  get  'connectfour/new' => 'connect_four#new'
-  post 'connectfour/drop_piece' => 'connect_four#drop_piece'
+  post '/drop_piece' => 'connect_four#drop_piece'
   
   get  '/tictactoe' => 'tic_tac_toe#new'
   post '/make_move' => 'tic_tac_toe#make_move'

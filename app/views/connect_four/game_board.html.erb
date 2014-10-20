@@ -1,0 +1,100 @@
+
+<h1>Welcome to Connect Four!</h1>
+<h2>It is player <%= @current_player %>'s turn!</h2>
+
+<p>
+  Enter your column selection using the form below
+</p>
+
+
+<!-- <pre>
+  <table>
+    <% @grid_arr.each do |row| %>
+      <tr>
+        <% row.each do |cell| %>
+          <td>
+          	<%= cell.nil? ? '-' : cell %>
+          </td>
+        <% end %>
+      </tr>
+    <% end %>
+  </table>
+</pre>
+
+<%= form_tag(drop_piece_path, :method => "POST") do %>
+  <table>
+    <% 1.times do %>
+    	<tr>
+    	  <% 7.times do |col| %>
+    	    <td>
+    	      <%= radio_button_tag("drop", "#{col}") %>
+    	    </td>
+    	  <% end %>
+    	</tr>
+    <% end %>
+  </table>
+  <%= submit_tag "Drop Piece" %>
+<% end %>
+ -->
+
+ <% 5.downto(0) do |row| %>
+		   <div class="row">
+			   	<div class="col-xs-offset-3">
+				     <% 0.upto(6) do |column| %>
+					     <span class="col-xs-1 c4-cell">
+					     	<% if @grid_arr[column][row].nil? %> 
+					     		<%= image_tag("cfwhite.jpeg")%>
+					     	<% elsif @grid_arr[column][row] == 'R' %>
+					     		<%= image_tag("cfred.jpeg")%>
+					     	<% elsif @grid_arr[column][row] == 'Y' %><%# black piece %>
+					     		<%= image_tag("cfyell.jpeg")%>
+					     	<% end %>
+					     </span>
+				     <% end %>
+			     </div>
+		   </div>
+		  <% end %>
+		
+			<div class="row">
+				<div class="col-xs-offset-3 ">
+					<%= form_tag(drop_piece_path, :method => "POST") do |f| %> 
+						<span class="radio col-xs-1">
+						  <%= radio_button_tag(:move, '0') %>
+						</span>
+						
+						<span class="radio col-xs-1">
+						  <%= radio_button_tag(:move, '1') %>
+						</span>
+						
+						<span class="radio col-xs-1">
+						  <%= radio_button_tag(:move, '2') %>
+						</span>
+						
+						<span class="radio col-xs-1">
+						  <%= radio_button_tag(:move, '3') %>
+						</span>
+						
+						<span class="radio col-xs-1">
+						  <%= radio_button_tag(:move, '4') %>
+						</span>
+						
+						<span class="radio col-xs-1">
+						  <%= radio_button_tag(:move, '5') %>
+						</span>
+						
+						<span class="radio col-xs-1">
+						  <%= radio_button_tag(:move, '6') %>
+						</span>
+
+						<div class="row">
+							<div class="col-xs-2 col-xs-offset-3">
+								<%= submit_tag("Submit", class: 'btn btn-large btn-success')%>
+							</div>
+						</div>
+
+
+					<% end %>
+				</div>
+			</div>
+		
+	
