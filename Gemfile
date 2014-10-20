@@ -32,6 +32,9 @@ group :development do
 end
 gem 'binding_of_caller'
 
+# Use PostgreSQL in production for deployment to Heroku
+gem 'pg', group: :production
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
